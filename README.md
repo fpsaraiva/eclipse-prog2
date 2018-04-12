@@ -5,7 +5,7 @@ Exercícios de classe, avaliações e trabalhos (projetos), realizados nas disci
 Curso de Análise e Desenvolvimento de Sistemas (Unisinos), semestre 2018/I.
 
 ## Pacotes:
-- 
+- Arrays bidimensionais (matrizes) - aula 01;
 
 ## Requisitos:
 - Java JDK;
