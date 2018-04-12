@@ -9,6 +9,9 @@ Curso de Análise e Desenvolvimento de Sistemas (Unisinos), semestre 2018/I.
 - Sisbiblio v.3 (polimorfismo, métodos abstratos) - NECESSITA REVISÃO;
 - Gerenciador de cidade (matrizes, polimorfismo, métodos abstratos, interfaces);
 - Matriz esparsa (manipulação de matrizes);
+- Game of Life - BREVE;
+- Simulador Rede de Petri - BREVE;
+- Planilha excel - BREVE;
 
 ## Requisitos:
 - Java JDK;
