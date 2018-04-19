@@ -1,80 +1,127 @@
 package gameoflife;
 
-public class GameOfLife {
-
-	private int totLinhas;
-	private int totColunas;
-	private boolean[][] tabuleiro;
+public class GameOfLife 
+{
+	private boolean[][] estadoAtual;
+	private boolean[][] proximoEstado;
+	private int tamanho;
 	
-	//construtor do "tabuleiro" do jogo, de acordo com as dimensoes especificadas
+	//construtor do "tabuleiro" do jogo, de acordo com o tamanho especificado
 	
-	public GameOfLife(int totLinhas, int totColunas) 
+	public GameOfLife(int tamanho) 
 	{
-		this.totLinhas = totLinhas;
-		this.totColunas = totColunas;
-		tabuleiro = new boolean[totLinhas][totColunas]; 
-	}
-	
-	//torna a celula viva na proxima iteracao, de acordo com a logica do jogo
-	
-	/*
-	public void setCellAlive(int linha, int coluna)
-	{
-		int contadorVivas = 0;
-		boolean cellCurrentlyAlive = tabuleiro[linha][coluna];
-
-		for(int r = -1; r <= 1; r++){
-			int currentRow = row + r;
-			currentRow = (currentRow < 0)? dimension - 1: currentRow;
-			currentRow = (currentRow >= dimension)? 0 : currentRow;
-			for(int c = -1; c <= 1; c++){
-				int currentCol = col + c;
-				currentCol = (currentCol < 0)? dimension - 1: currentCol;
-				currentCol = (currentCol >= dimension)? 0 : currentCol;
-				if(world[currentRow][currentCol]){
-					liveCount++;
-				}
+		this.tamanho = tamanho;
+		estadoAtual = new boolean[this.tamanho][this.tamanho];
+		proximoEstado = new boolean[this.tamanho][this.tamanho]; 
+		
+		for(int i = 0; i < estadoAtual.length; i++) {
+			for(int j = 0; j < estadoAtual[i].length; j++) {
+				estadoAtual[i][j] = false;
 			}
 		}
-
-		// Since all cells are counted including the cell we are calculating.
-		// We must subtract 1 from the liveCount if the cell we are calculating for is alive.
-		if(cellCurrentlyAlive){
-			liveCount--;
-		}
-	
-		// The game of life rules in code form.
-		if(liveCount == 2 && cellCurrentlyAlive){
-			return true;
-		} else if(liveCount == 3){
-			return true;
-		} else {
-			return false;
-		}
-	}
-	
-	*/
-	
-	public void setCellDead()
-	{
 		
 	}
+	
+	//torna a celula viva
+	
+	
+	public boolean setCellAlive(int linha, int coluna, boolean isAlive)
+	{
+		try {
+			return estadoAtual[linha][coluna];
+		} catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("Vc tentou criar uma célula em uma posição inválida: linha " + linha + " e coluna " + coluna + ".");
+		}
+		return false;
+	}
+	
+	//torna a celula morta
+	
+	public boolean setCellDead(int linha, int coluna, boolean isAlive)
+	{
+		try {
+			return estadoAtual[linha][coluna];
+		} catch(ArrayIndexOutOfBoundsException e) {
+			System.out.println("Vc tentou matar uma célula em uma posição inválida: linha " + linha + " e coluna " + coluna + ".");
+		}
+		return false;
+	}
+	
+	//executa um ciclo da simulação do autômato
 	
 	public void execCycle()
 	{
+		int quantVivos;
 		
+		for(int i = 0; i < estadoAtual.length; i++) {
+			for(int j = 0; j < estadoAtual[i].length; j++) {
+				quantVivos = getQuantNeighborsAlive(i, j);
+				
+							//para células vivas
+				if(isCellAlive(i, j)) {
+					setCellNextState(i, j, (quantVivos == 2 || quantVivos == 3));
+				} else {	//para células mortas
+					setCellNextState(i, j, (quantVivos == 3));
+				}
+			}
+		}
+		
+		//realiza a alteração de estado da célula
+		for(int i = 0; i < estadoAtual.length; i++) {
+			for(int j = 0; j < estadoAtual[i].length; j++) {
+				estadoAtual[i][j] = proximoEstado[i][j];
+			}
+		}
+		
+		show();
 	}
 	
-	public void show(){
-		
-		for(int i = 0; i < tabuleiro.length; i++) {
-			for(int j = 0; j < tabuleiro[i].length; j++) {
-				 System.out.print(tabuleiro[i][j] ? '@' : '.');
+	//mostra o estado atual do autômato
+	
+	public void show()
+	{	
+		for(int i = 0; i < estadoAtual.length; i++) {
+			for(int j = 0; j < estadoAtual[i].length; j++) {
+				 System.out.print(estadoAtual[i][j] ? 'X' : '.');
 				 System.out.print(' ');
 			}
 			System.out.println();
 		}
-		//System.out.println("Generation:" + generation);
+	}
+
+	//métodos auxiliares
+	
+	private int getQuantNeighborsAlive(int linha, int coluna) 
+	{
+		int soma = 0;
+		
+		for(int i = linha - 1; i <= linha + 1; i++) {
+			for(int j = coluna - 1; j <= coluna + 1; j++) {
+				soma += (estadoAtual[safe(i)][safe(j)] ? 1 : 0);
+			}
+		}
+		return soma - (estadoAtual[safe(linha)][safe(coluna)] ? 1 : 0);
 	}
 	
+	private int safe(int i) 
+	{
+		return (i < 0) ? this.tamanho - 1 : i % this.tamanho;
+	}
+	
+	//verifica se a célula está viva
+	
+	private boolean isCellAlive(int linha, int coluna) {
+		try {
+			return estadoAtual[linha][coluna];
+		} catch (ArrayIndexOutOfBoundsException e) {
+			System.out.println("Vc tentou verificar se uma está viva, porém em uma posição inválida: linha " + linha + " e coluna " + coluna + ".");
+		}
+		return false;
+	}
+	
+	//seta o próximo estado da célula
+	
+	private void setCellNextState(int linha, int coluna, boolean isAlive) {
+		proximoEstado[linha][coluna] = isAlive;
+	}
 }
