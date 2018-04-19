@@ -6,12 +6,14 @@ Curso de Análise e Desenvolvimento de Sistemas (Unisinos), semestre 2018/I.
 
 ## Pacotes:
 - Arrays bidimensionais (matrizes) - aula 01;
-- Sisbiblio v.3 (polimorfismo, métodos abstratos) - NECESSITA REVISÃO;
+- Sisbiblio v.3 (polimorfismo, métodos abstratos, interfaces);
 - Gerenciador de cidade (matrizes, polimorfismo, métodos abstratos, interfaces);
 - Matriz esparsa (manipulação de matrizes);
-- Game of Life - BREVE;
+- Game of Life - REVISAR;
 - Simulador Rede de Petri - BREVE;
-- Planilha excel;
+- Planilha excel - REVER;
+- Labirinto - BREVE;
+- Tabela periódica - BREVE;
 
 ## Requisitos:
 - Java JDK;
