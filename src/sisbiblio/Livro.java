@@ -2,7 +2,6 @@ package sisbiblio;
 
 public class Livro
 {
-    
     private String nomeLivro, nomeAutor;
     private int codigoEditora, numeroPaginas, quantExemplares;
 
@@ -17,7 +16,7 @@ public class Livro
 
     public Livro(String nomeLivro)
     {
-    		this.nomeLivro = nomeLivro;
+    	this.nomeLivro = nomeLivro;
     }
     
     public String getNomeLivro() 

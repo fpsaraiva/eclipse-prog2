@@ -20,7 +20,7 @@ public class Biblioteca
 	
 	/*
 	 * 
-	 * metodos para livros
+	 * métodos para livros
 	 *  
 	 */
 	
@@ -181,7 +181,7 @@ public class Biblioteca
 	
 	/*
 	 * 
-	 * metodos auxiliares livros
+	 * métodos auxiliares livros
 	 *  
 	 */
 	
@@ -211,7 +211,7 @@ public class Biblioteca
 	
 	/*
 	 * 
-	 * metodos para editoras
+	 * métodos para editoras
 	 *  
 	 */
 	
@@ -255,7 +255,7 @@ public class Biblioteca
 
 	/*
 	 * 
-	 * metodos auxiliares editoras
+	 * métodos auxiliares editoras
 	 *  
 	 */
 	

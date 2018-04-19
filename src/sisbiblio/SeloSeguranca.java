@@ -1,24 +1,24 @@
 package sisbiblio;
 
-public interface SeloSeguranca {
+public interface SeloSeguranca 
+{
 
-	final int base = 8742; //propriedades sao final 
+	final int base = 8742; //propriedades são final 
 	
-	
-	//estes m�todos  sao publicos
+	//estes métodos  são públicos
 	public void setaSelo();
 	public boolean verificaSelo();
 	public void mostraSelo();
 	
 	/*
 	 * Obs.:
-	 * 1.interface eh uma classe abstrata sem nenhuma implementacao
-	 * isto eh, todos metodos sao abstratos e publicos
+	 * 1.interface é uma classe abstrata sem nenhuma implementacao
+	 * ou seja, todos metodos são abstratos e públicos
 	 * 
-	 * 2.propriedades (se presentes) sao constantes (final) e devem
+	 * 2.propriedades (se presentes) são constantes (final) e devem
 	 * ser inicializadas
 	 * 
-	 * 3.uma classe pode implementar varias interfaces simultaneamente
+	 * 3.uma classe pode implementar várias interfaces simultaneamente
 	 * 
 	 */
 }

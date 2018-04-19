@@ -11,7 +11,7 @@ Curso de Análise e Desenvolvimento de Sistemas (Unisinos), semestre 2018/I.
 - Matriz esparsa (manipulação de matrizes);
 - Game of Life - REVISAR;
 - Simulador Rede de Petri - BREVE;
-- Planilha excel - REVER;
+- Planilha excel - REVISAR;
 - Labirinto - BREVE;
 - Tabela periódica - BREVE;
 
