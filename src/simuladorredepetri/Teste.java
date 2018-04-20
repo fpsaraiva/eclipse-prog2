@@ -33,12 +33,9 @@ public class Teste {
 		rede.inserirTransicao(t2);
 		
 		rede.mostrarRede();
-		rede.executarCiclo();
+		rede.imprimirMensagem(rede.executarCiclo());
 		rede.mostrarRede();
-		rede.checarTransicoes();
-		rede.executarCiclo();
-		rede.mostrarRede();
-		rede.checarTransicoes();
+		rede.imprimirMensagem(rede.executarCiclo());
 		
 		/* segunda etapa: criar interacao com usuario na montagem da rede
 		System.out.println("*******************");

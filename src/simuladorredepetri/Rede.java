@@ -6,7 +6,7 @@ public class Rede
 	private int totLugares, totTransicoes;
 	private Lugar []vetLugares;
 	private Transicao []vetTransicao;
-	private boolean validação;
+	private boolean executa;
 
 	public Rede(int qtdeLugares, int qtdeTransicoes) 
 	{
@@ -85,27 +85,33 @@ public class Rede
 		System.out.format("+---------------------+--------------+%n");
 	}
 	
-	public void executarCiclo() 
+	public boolean executarCiclo()
 	{
-		for (int i = 0; i < totTransicoes; i++) {
-			if(vetTransicao[i].verificarHabilitacao()){
+		int numCiclo = 0;
+		
+		for (int i = 0; i < vetTransicao.length; i++) {
+			if(vetTransicao[i].verificarHabilitacao() == false){
+				executa = false;
+				break;
+			}else {
 				vetTransicao[i].setMarcasEntrada();
 				vetTransicao[i].setMarcasSaida();
+				executa = true;
 			}
+			
 		}
-		System.out.println("\nCiclo executado com sucesso!");
+		return executa;
 	}
-
-	public boolean checarTransicoes()
+	
+	public void imprimirMensagem(boolean verificacao)
 	{
-		for(int i = 0; i < vetTransicao.length; i++) {
-			if(vetTransicao[i].getTotHabilitadas() == 0) {
-				System.out.println("Rede travada! Não há mais transições habilitadas");
-				validação = true;
-			} else {
-				validação = false;
-			}
+		int numCiclo = 0;
+		if(verificacao == true) {
+			numCiclo++;
+			System.out.println("\nCiclo " + numCiclo + " executado com sucesso!");
+		}else if(verificacao == false) {
+			System.out.println("\nRede travada! Existem transições inabilitadas.");
 		}
-		return validação;
 	}
+	
 }

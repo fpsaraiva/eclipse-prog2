@@ -8,7 +8,6 @@ public class Transicao
 	 private boolean habilitada;
 	 private Arco []vetLugaresEntrada;
 	 private Arco []vetLugaresSaida;
-	 private int totHabilitadas = 0;
 	 	 
 	public Transicao(int qtdeLugaresEntrada, int qtdeLugaresSaida, String nomeTransicao, boolean habilitada) 
 	{
@@ -23,11 +22,6 @@ public class Transicao
 	public String getNomeTransicao() 
 	{
 		return nomeTransicao;
-	}
-
-	public int getTotHabilitadas()
-	{
-		return totHabilitadas;
 	}
 	
 	public boolean inserirArcoDeEntrada(Arco conexao) 
@@ -58,10 +52,8 @@ public class Transicao
 	{
 		for (int i = 0; i < totLugaresEntrada; i++) {
 			if(vetLugaresEntrada[i].getLugar().getQtdeMarcas() >= vetLugaresEntrada[i].getPeso()) {
-				totHabilitadas++;
 				habilitada = true;
 			} else {
-				totHabilitadas--;
 				habilitada = false;
 			}
 		}
