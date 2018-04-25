@@ -1,9 +1,9 @@
 package planilhaexcel;
 
-public class Teste {
- 
-    public static void main(String[] args) {
-         
+public class Teste 
+{ 
+    public static void main(String[] args) 
+    {     
         Planilha p = new Planilha(10,10);
          
         p.setCel(2.3, 1, 4);
@@ -15,11 +15,14 @@ public class Teste {
          
         p.mostraPlan(1, 1, 4, 4);
         
+        //p.salvaPlan("planteste.xls")
+        
         //p.limpaCels(1, 1, 3, 2);
 
-        //System.out.print("\n\n" + "Limpando celulas"  + "\n");
+        //System.out.print("\n\n" + "Limpando celulas..."  + "\n");
         
         //p.mostraPlan(1, 1, 4, 4);
+        
          
     }
  

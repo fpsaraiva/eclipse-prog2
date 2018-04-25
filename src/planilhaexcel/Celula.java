@@ -1,68 +1,81 @@
 package planilhaexcel;
  
-public class Celula {
-     
+public class Celula 
+{     
     double Valor;
     String s;
     Formula f;
     int Linha;
     int Coluna;
       
-    Celula(double Valor, int Linha, int Coluna){
+    Celula(double Valor, int Linha, int Coluna)
+    {
         this.Valor = Valor;
         this.Linha = Linha;
         this.Coluna = Coluna;
     }
      
-    Celula(String s, int Linha, int Coluna){
+    Celula(String s, int Linha, int Coluna)
+    {
         this.s = s;
         this.Linha = Linha;
         this.Coluna = Coluna;
     }
      
-    Celula(Formula f, int Linha, int Coluna){
+    Celula(Formula f, int Linha, int Coluna)
+    {
         this.f = f;
         this.Linha = Linha;
         this.Coluna = Coluna;
     }
      
-    public double getValor(){
+    public double getValor()
+    {
         return Valor;
     }
      
-    public void setValor(double v){
+    public void setValor(double v)
+    {
         this.Valor = v;
     }
       
-    public String getString(){
+    public String getString()
+    {
         return s;
     }
      
-    public void setString(String s){
+    public void setString(String s)
+    {
         this.s = s;
     }
      
-    public Formula getFormula(){
+    public Formula getFormula()
+    {
         return f;
     }
      
-    public void setFormula(Formula f){
+    public void setFormula(Formula f)
+    {
         this.f = f;
     }
      
-    public int getLinha(){
+    public int getLinha()
+    {
         return Linha;
     }
      
-    public void setLinha(int l){
+    public void setLinha(int l)
+    {
         this.Linha = l;
     }
       
-    public int getColuna(){
+    public int getColuna()
+    {
         return Coluna;
     }
      
-    public void setColuna(int c){
+    public void setColuna(int c)
+    {
         this.Coluna = c;
     }
       
