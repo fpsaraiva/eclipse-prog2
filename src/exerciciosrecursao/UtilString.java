@@ -1,18 +1,18 @@
 package exerciciosrecursao;
 import java.text.Normalizer;
 
-public class UtilString {
-
-	
-	
-	public String removeAcentos(String str) {
+public class UtilString 
+{
+	public String removeAcentos(String str) 
+	{
 		String strSemAcentos = Normalizer.normalize(str, Normalizer.Form.NFD);
 		strSemAcentos = strSemAcentos.replaceAll("[^!.;:,�`'\\p{ASCII}]", "");
 		strSemAcentos = strSemAcentos.replaceAll("['\\\\.,()|/]","");
 		return strSemAcentos;
 	}
 	
-	public String removeAcentosEspacos(String str) {
+	public String removeAcentosEspacos(String str) 
+	{
 		String strSemAcentos = Normalizer.normalize(str, Normalizer.Form.NFD);
 		strSemAcentos = strSemAcentos.replaceAll("[^!.;:,�`'\\p{ASCII}]", "");
 		strSemAcentos = strSemAcentos.replaceAll("['\\\\.,()|/]","");
@@ -20,7 +20,6 @@ public class UtilString {
 		strSemAcentos = strSemAcentos.toUpperCase();
 		return strSemAcentos;
 	}
-	
 	
 	public String retiraCaracteresEspeciais(String stringFonte)
 	{
@@ -47,10 +46,6 @@ public class UtilString {
 	       filtro = filtro.replaceAll("['\\\\.,()|/]", "");
 	       filtro = filtro.replaceAll("[^!-�]{1}[^ -�]{0,}[^!-�]{1}|[^!-�]{1}", " ");
 	       return filtro;
-	   }
-	
-	
-	
-	
+	}
 	
 }

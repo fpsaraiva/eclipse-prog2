@@ -1,11 +1,11 @@
 package exerciciosrecursao;
 
-public class MaiorDivisorComum {
-
+public class MaiorDivisorComum 
+{
 	private int result;
 
-	public MaiorDivisorComum(int x, int y) {
-
+	public MaiorDivisorComum(int x, int y) 
+	{
 		if (x <= 0) {
 			throw new IllegalArgumentException("argumento x inferior ou igual a 0");
 		}
@@ -14,20 +14,21 @@ public class MaiorDivisorComum {
 		}
 
 		this.result = mdc(x, y);
-
 	}
 
-	private int mdc(int x, int y) {
+	private int mdc(int x, int y) 
+	{
 		int resto = x % y;
+		
 		if (resto == 0) {
 			return y;
 		} else {
 			return mdc(y, resto);
 		}
-
 	}
 
-	public int getResult() {
+	public int getResult() 
+	{
 		return this.result;
 	}
 

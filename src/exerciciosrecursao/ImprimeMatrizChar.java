@@ -1,16 +1,15 @@
 package exerciciosrecursao;
 
-public class ImprimeMatrizChar {
+public class ImprimeMatrizChar 
+{
 
 	public ImprimeMatrizChar(char[][] m)
-	{
-	
+	{	
 		matrizprint(m, 0, 0);
-	
 	}
 	
-	
-	private void matrizprint(char[][] array, int linha, int coluna) {
+	private void matrizprint(char[][] array, int linha, int coluna) 
+	{
 	    if (linha < array.length) {
 	        if (coluna < array[linha].length) {
 	            System.out.print(array[linha][coluna]);
@@ -21,6 +20,5 @@ public class ImprimeMatrizChar {
 	        }
 	    }
 	}
-	
 	
 }

@@ -4,12 +4,16 @@ public class Fatorial {
 
 	private int result;
 
-	public Fatorial(int n) {
-		if (n<0) throw new IllegalArgumentException("argumento inferior a 0");
+	public Fatorial(int n) 
+	{
+		if (n < 0) { 
+			throw new IllegalArgumentException("argumento inferior a 0");
+		}
 		this.result = fat(n);
 	}
 
-	private int fat(int x) {
+	private int fat(int x) 
+	{
 		if (x <= 0) {
 			return 1;
 		} else {
@@ -18,7 +22,8 @@ public class Fatorial {
 
 	}
 
-	public int getResult() {
+	public int getResult() 
+	{
 		return result;
 	}
 

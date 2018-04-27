@@ -2,9 +2,8 @@ package exerciciosrecursao;
 
 public class Testes {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+	public static void main(String[] args) 
+	{
 		Fatorial f = new Fatorial(5);
 		System.out.println(f.getResult());
 		
@@ -27,11 +26,9 @@ public class Testes {
 		System.out.println(iad.toString());
 		
 		
-		
 		char[][] matrizChar = {{'a','b','c'},{'d','e','f'},{'g','h','i'}};
 		
 		ImprimeMatrizChar imca = new ImprimeMatrizChar(matrizChar);
-		
 		
 		Fibonacci fib = new Fibonacci(6);
 		System.out.println(fib.getResult());
@@ -59,8 +56,7 @@ public class Testes {
 		System.out.println(pa.ehPalindromo());
 		
 		UtilString u = new UtilString();
-		System.out.println(u.removeAcentos("� uma boa ideia."));
-		
+		System.out.println(u.removeAcentos("É uma boa ideia."));
 		
 		pa = new Palindromo("O galo ama o lago.");
 		
@@ -85,10 +81,7 @@ public class Testes {
 		
 		MaiorDivisorComum mad = new MaiorDivisorComum(8,4);
 		System.out.println(mad.getResult());
-		
-		
+				
 	}
-
-	
 
 }
